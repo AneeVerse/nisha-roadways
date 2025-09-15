@@ -43,28 +43,29 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen bg-white p-4 md:p-6 lg:p-8">
-      <div className="relative h-[75vh] lg:h-[90vh] overflow-hidden rounded-2xl">
+      <div className="relative h-[75vh] lg:h-[90vh] overflow-hidden rounded-3xl" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
         {/* Background Images with Overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
           {backgroundImages.map((image, index) => (
             <div
               key={image}
               className={`absolute inset-0 transition-opacity duration-1000 ${
                 index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
+              style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}
             >
               <Image
                 src={image}
                 alt={`Hero background ${index + 1}`}
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover"
                 priority={index === 0}
               />
             </div>
           ))}
           
           {/* Black Gradient Overlay - Dark bottom to transparent top */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}></div>
         </div>
 
         {/* Content */}
