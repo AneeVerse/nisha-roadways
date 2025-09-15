@@ -42,7 +42,7 @@ const Hero = () => {
   }, [backgroundImages.length]);
 
   return (
-    <section className="relative min-h-screen bg-white p-4 md:p-6 lg:p-8">
+    <section className="relative min-h-screen bg-[#f4f6ff] p-4 md:p-6 lg:p-8">
       <div className="relative h-[75vh] lg:h-[90vh] overflow-hidden rounded-3xl" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
         {/* Background Images with Overlay */}
         <div className="absolute inset-0" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
