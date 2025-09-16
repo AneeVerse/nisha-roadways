@@ -11,10 +11,10 @@ type StatCardProps = {
 
 const StatCard: React.FC<StatCardProps> = ({ percentage, title, subtitle }) => {
   return (
-    <div className="flex items-center gap-6 rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-black/5">
+    <div className="flex items-center gap-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
       <div className="relative h-16 w-16 shrink-0">
         <svg viewBox="0 0 48 48" className="h-16 w-16">
-          <circle cx="24" cy="24" r="20" fill="#0b122b" />
+          <circle cx="24" cy="24" r="20" fill="#f1f5f9" />
           <circle
             cx="24"
             cy="24"
@@ -34,7 +34,7 @@ const StatCard: React.FC<StatCardProps> = ({ percentage, title, subtitle }) => {
             dominantBaseline="middle"
             textAnchor="middle"
             fontSize="10"
-            fill="#ffffff"
+            fill="#1e293b"
             fontWeight="700"
           >
             {percentage}%
@@ -78,7 +78,7 @@ const tabs = [
 const Introduction: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <div className="mb-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -102,7 +102,7 @@ const Introduction: React.FC = () => {
                   key={tab.key}
                   onClick={() => setActiveIndex(index)}
                   className={`${
-                    isActive ? "bg-slate-900 text-white" : "bg-white text-slate-700 ring-1 ring-black/5"
+                    isActive ? "bg-blue-600 text-white" : "bg-white text-slate-700 ring-1 ring-black/5"
                   } rounded-2xl px-4 py-3 text-center shadow-sm transition-colors font-[family-name:var(--font-space-grotesk)]`}
                 >
                   <span className="text-base font-semibold">{tab.label}</span>
