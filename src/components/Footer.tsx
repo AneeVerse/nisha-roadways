@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
           <div className="max-w-7xl mx-auto px-6 py-6 text-xs text-white/60 grid grid-cols-1 md:grid-cols-3 items-center">
             <a href="#" className="hover:text-white/80 text-left">Terms and conditions</a>
             <span className="text-center">© 2024 PBM Infotech</span>
-            <div className="text-right"></div>
+            <a href="#" className="hover:text-white/80 text-right">Privacy Policy</a>
           </div>
         </div>
       </div>
