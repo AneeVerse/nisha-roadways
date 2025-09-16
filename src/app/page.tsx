@@ -7,6 +7,8 @@ import OurProcess from '@/components/OurProcess';
 import Team from '@/components/Team';
 import Testimonials from '@/components/Testimonials';
 import Awards from '@/components/Awards';
+import Blogs from '@/components/Blogs';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -21,6 +23,8 @@ export default function Home() {
       <Team />
       <Testimonials />
       <Awards />
+      <Blogs />
+      <Footer />
  
     </div>
   );

@@ -7,3 +7,5 @@ export { default as OurProcess } from './OurProcess';
 export { default as Team } from './Team';
 export { default as Testimonials } from './Testimonials';
 export { default as Awards } from './Awards';
+export { default as Blogs } from './Blogs';
+export { default as Footer } from './Footer';
