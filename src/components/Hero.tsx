@@ -68,9 +68,9 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}></div>
         </div>
 
-        {/* Content */}
+        {/* Content - Fixed positioning aligned with navbar */}
         <div className="relative z-10 w-full h-full flex items-end pb-16">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 w-full">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
             <div className="w-full">
               {/* Top Section - Badge */}
               <div className="mb-8">
@@ -79,7 +79,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Main Content Grid */}
+              {/* Main Content Grid - Fixed positioning */}
               <div className="grid lg:grid-cols-[2fr_1fr] gap-24 items-start">
                 {/* Left Side - Main Heading */}
                 <div className="text-white max-w-4xl">

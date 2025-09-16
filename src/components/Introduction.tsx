@@ -78,7 +78,7 @@ const tabs = [
 const Introduction: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
+    <section className="relative mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <div className="mb-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
