@@ -14,43 +14,43 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     name: "Jennifer Smith",
-    role: "Client, France",
+    role: "Supply Chain Manager, France",
     avatar: "/testimonals/6790b4bfb4f8cf5b84488dc5_testimonial-img-01.jpg",
     rating: 4,
     quote:
-      "I have lost the weight I struggled with, I feel fitter and I'm getting the right fuel for my body every day. Your team personalized nutrition plan help me improve my daily plan to change my habit for healthy living.",
+      "Working with Nisha Roadways has been an exceptional experience from start to finish. Their professional logistics team handled our complex shipping requirements with precision and care. I've struggled with unreliable shipping partners before, but their personalized transportation solutions helped streamline our entire supply chain process. The attention to detail and proactive communication made all the difference in our business operations.",
   },
   {
     name: "Richard Scott",
-    role: "Client, Oman",
+    role: "Operations Director, Oman",
     avatar: "/testimonals/6790b4bf4ec37274ab84d565_testimonial-img-02.jpg",
     rating: 4,
     quote:
-      "I feel fitter and I'm getting the right fuel for my body every day. The plan helped me change my habits for healthy living and stay consistent.",
+      "The comprehensive logistics support from Nisha Roadways transformed our delivery operations completely. Their efficient routing and real-time tracking system gave us the visibility we needed to serve our customers better. The team's dedication to meeting deadlines and handling special requirements with such professionalism has made them our go-to transportation partner for all our business needs.",
   },
   {
     name: "Emily Carter",
-    role: "Client, USA",
+    role: "Logistics Coordinator, USA",
     avatar: "/testimonals/6790b4c0a82850ef10ddac7b_testimonial-img-03.jpg",
     rating: 5,
     quote:
-      "Professional service and thoughtful guidance. The approach made it easy to follow and I saw real results in a few weeks.",
+      "Outstanding professional service and thoughtful guidance throughout our entire shipping process. Their strategic approach to logistics management made it incredibly easy to coordinate our multi-location deliveries, and we saw significant improvements in delivery times and cost efficiency within just a few weeks of partnering with them.",
   },
   {
     name: "Daniel Lee",
-    role: "Client, Singapore",
+    role: "Fleet Manager, Singapore",
     avatar: "/testimonals/6790b4c141507d69d69e8d99_testimonial-img-04.jpg",
     rating: 4,
     quote:
-      "Clear plan, helpful tips, and great support. I have more energy and better daily rhythm now.",
+      "Nisha Roadways provided us with a clear transportation strategy, helpful optimization tips, and exceptional customer support throughout our partnership. Their innovative solutions have given our business more operational efficiency and a much better workflow rhythm. The reliability and consistency of their service has exceeded our expectations.",
   },
   {
     name: "Priya Sharma",
-    role: "Client, India",
+    role: "Transportation Head, India",
     avatar: "/testimonals/6790b4bf2b5038278f91241f_testimonial-img-05.jpg",
     rating: 5,
     quote:
-      "The team made the process simple. I feel confident and focused—highly recommended!",
+      "The entire Nisha Roadways team made our complex logistics requirements seem simple and manageable. Their expertise in handling specialized cargo and time-sensitive deliveries has made me feel completely confident in our supply chain operations. I'm now focused on growing our business instead of worrying about shipping - highly recommended for any serious business!",
   },
 ];
 
@@ -127,10 +127,10 @@ const Testimonials: React.FC = () => {
   const goNext = () => setPage((p) => (p + 1) % total);
 
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
+    <section className="relative mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[360px_1fr]">
         {/* Left dark panel */}
-        <div className="rounded-[28px] bg-[#0a0f2a] text-white p-8 flex flex-col justify-between min-h-[420px]">
+        <div className="rounded-[28px] bg-[#0a0f2a] text-white p-8 flex flex-col justify-between min-h-[480px]">
           <div>
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/70">
               <Image src="/67761af397573ca47fb7f6cb_subtitle-icon.png" alt="Testimonials icon" width={16} height={16} />
