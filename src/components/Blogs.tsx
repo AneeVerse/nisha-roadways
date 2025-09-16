@@ -45,13 +45,13 @@ const items: Blog[] = [
 const MetaRow: React.FC<{ date: string; author: string; className?: string }> = ({ date, author, className }) => (
   <div className={`flex items-center gap-4 text-xs text-slate-500 ${className ?? ""}`}>
     <div className="flex items-center gap-1">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
         <path d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 0 0 2-2V7H3v12a2 2 0 0 0 2 2z" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       <span>{date}</span>
     </div>
     <div className="flex items-center gap-1">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" strokeLinecap="round" strokeLinejoin="round" />
         <circle cx="12" cy="7" r="4" />
       </svg>
@@ -62,7 +62,7 @@ const MetaRow: React.FC<{ date: string; author: string; className?: string }> = 
 
 const Blogs: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
+    <section className="relative mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
       {/* Section heading */}
       <div className="text-center mb-10">
         <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">

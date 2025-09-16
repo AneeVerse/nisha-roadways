@@ -46,7 +46,7 @@ const Awards: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Section title with dividers */}
         <div className="mb-10 flex items-center gap-4">
           <div className="hidden h-px flex-1 bg-slate-200 sm:block" />
