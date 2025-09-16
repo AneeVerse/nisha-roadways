@@ -6,6 +6,7 @@ import Services from '@/components/Services';
 import OurProcess from '@/components/OurProcess';
 import Team from '@/components/Team';
 import Testimonials from '@/components/Testimonials';
+import Awards from '@/components/Awards';
 
 export default function Home() {
   return (
@@ -16,8 +17,10 @@ export default function Home() {
       <Introduction />
       <Services />
       <OurProcess />
+      
       <Team />
       <Testimonials />
+      <Awards />
  
     </div>
   );

@@ -6,3 +6,4 @@ export { default as Services } from './Services';
 export { default as OurProcess } from './OurProcess';
 export { default as Team } from './Team';
 export { default as Testimonials } from './Testimonials';
+export { default as Awards } from './Awards';
