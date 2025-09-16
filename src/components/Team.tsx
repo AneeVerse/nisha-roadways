@@ -18,13 +18,13 @@ const members: TeamMember[] = [
 
 const Team: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 bg-[#f4f6ff]">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="relative mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-8 bg-[#f4f6ff]">
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
         {members.map((m) => (
-          <article key={m.name} className="group relative">
-            <div className="rounded-[28px] overflow-hidden bg-transparent card-clip">
+          <article key={m.name} className="group relative transform transition-transform duration-300 hover:scale-105">
+            <div className="rounded-[28px] overflow-hidden bg-transparent card-clip shadow-lg hover:shadow-xl transition-shadow duration-300">
               {/* Image with top-right curved cut */}
-              <div className="relative w-full h-96 curved-notch">
+              <div className="relative w-full h-[450px] curved-notch">
                 <Image
                   src={m.image}
                   alt={m.name}

@@ -58,7 +58,7 @@ const OurProcess: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#f4f6ff] py-16">
+    <section className="relative w-full bg-[#f4f6ff] py-20">
       {/* Header */}
       <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -78,7 +78,7 @@ const OurProcess: React.FC = () => {
       </div>
 
       {/* Steps */}
-      <div className="relative mt-12" ref={containerRef}>
+      <div className="relative mt-16" ref={containerRef}>
         {/* Dotted blue connector line positioned to Step level */}
         {lineTop !== null ? (
           <div className="pointer-events-none absolute inset-x-0 hidden md:block" style={{ top: lineTop }}>
@@ -86,11 +86,11 @@ const OurProcess: React.FC = () => {
           </div>
         ) : null}
 
-        <div className="relative z-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 px-4 sm:px-6 lg:px-8">
           {steps.map((item, idx) => (
             <div key={idx} className="relative flex flex-col items-center text-center">
               {/* Icon - no white background */}
-              <div className="mb-6">
+              <div className="mb-8">
                 <Image src={item.icon} alt={item.title} width={52} height={52} />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-[family-name:var(--font-space-grotesk)]">
@@ -103,7 +103,7 @@ const OurProcess: React.FC = () => {
                   {item.step}
                 </span>
               </div>
-              <p className="mt-6 max-w-[260px] text-sm leading-6 text-slate-600">
+              <p className="mt-8 max-w-[260px] text-sm leading-6 text-slate-600">
                 Popularised in with release of Letraset containing passages and more recently
               </p>
             </div>
