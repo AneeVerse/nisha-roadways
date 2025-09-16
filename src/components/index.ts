@@ -4,3 +4,5 @@ export { default as LogoSlider } from './LogoSlider';
 export { default as Introduction } from './Introduction';
 export { default as Services } from './Services';
 export { default as OurProcess } from './OurProcess';
+export { default as Team } from './Team';
+export { default as Testimonials } from './Testimonials';

@@ -69,3 +69,33 @@ html {
 .animate-slideInUp {
   animation: slideInUp 0.6s ease-out;
 }
+
+/* Curved top-right notch for images (fixed quarter-circle) */
+.curved-notch {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .curved-notch::after {
+    width: 52px;
+    height: 52px;
+    border-bottom-left-radius: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .curved-notch::after {
+    width: 44px;
+    height: 44px;
+    border-bottom-left-radius: 12px;
+  }
+}
+
+/* wrapper diagonal top-right cut (smaller) */
+.card-clip {
+  clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%);
+}
