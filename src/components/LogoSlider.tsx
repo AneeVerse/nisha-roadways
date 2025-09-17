@@ -42,21 +42,21 @@ const LogoSlider = () => {
   type Logo = { src: string; alt: string };
 
   const Card = ({ src, alt }: Logo) => (
-    <div className="mx-4 md:mx-6 lg:mx-8 flex-shrink-0">
-      <div className="w-[160px] h-[90px] md:w-[180px] md:h-[100px] bg-white rounded-xl shadow-sm ring-1 ring-gray-100 flex items-center justify-center">
+    <div className="mx-2 sm:mx-3 md:mx-4 lg:mx-6 xl:mx-8 flex-shrink-0">
+      <div className="w-[120px] h-[70px] sm:w-[140px] sm:h-[80px] md:w-[160px] md:h-[90px] lg:w-[180px] lg:h-[100px] bg-white rounded-lg sm:rounded-xl shadow-sm ring-1 ring-gray-100 flex items-center justify-center">
         <Image
           src={src}
           alt={alt}
           width={120}
           height={60}
-          className="w-auto h-6 md:h-8 object-contain"
+          className="w-auto h-4 sm:h-5 md:h-6 lg:h-8 object-contain"
         />
       </div>
     </div>
   );
 
   return (
-    <section className="w-full bg-[#f4f6ff] py-6 overflow-hidden">
+    <section className="w-full bg-[#f4f6ff] py-3 sm:py-4 md:py-6 overflow-hidden">
       <div className="flex animate-slide">
         <div className="flex items-center justify-center min-w-max">
           {logos.map((logo, index) => (

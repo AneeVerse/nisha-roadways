@@ -62,29 +62,29 @@ const MetaRow: React.FC<{ date: string; author: string; className?: string }> = 
 
 const Blogs: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8 bg-[#f4f6ff]">
+    <section className="relative mx-auto max-w-[1400px] px-3 py-8 sm:px-4 sm:py-12 md:py-16 lg:px-8 bg-[#f4f6ff]">
       {/* Section heading */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-6 sm:mb-8 md:mb-10">
         <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
           <Image src="/67761af397573ca47fb7f6cb_subtitle-icon.png" alt="Blog icon" width={16} height={16} />
           <span>Our Blog</span>
         </div>
-        <h2 className="text-4xl font-bold leading-tight text-slate-900 font-[family-name:var(--font-space-grotesk)]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-slate-900 font-[family-name:var(--font-space-grotesk)]">
           Updated Blogs <span className="text-blue-600">& News</span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.1fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-[1.1fr_1fr]">
         {/* Left list */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {items.map((b) => (
-            <article key={b.id} className="flex items-center gap-6 rounded-[28px] bg-white p-5 sm:p-6 ring-1 ring-black/5 shadow-sm card-clip overflow-hidden">
-              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl">
+            <article key={b.id} className="flex items-center gap-3 sm:gap-4 md:gap-6 rounded-2xl sm:rounded-3xl lg:rounded-[28px] bg-white p-4 sm:p-5 lg:p-6 ring-1 ring-black/5 shadow-sm card-clip overflow-hidden">
+              <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-xl sm:rounded-2xl">
                 <Image src={b.thumbnail} alt={b.title} fill className="object-cover" />
               </div>
-              <div>
+              <div className="flex-1 min-w-0">
                 <MetaRow date={b.date} author={b.author} />
-                <h3 className="mt-2 text-lg font-bold text-slate-900 max-w-xl font-[family-name:var(--font-space-grotesk)]">
+                <h3 className="mt-2 text-sm sm:text-base lg:text-lg font-bold text-slate-900 font-[family-name:var(--font-space-grotesk)] line-clamp-2">
                   {b.title}
                 </h3>
               </div>
@@ -93,14 +93,14 @@ const Blogs: React.FC = () => {
         </div>
 
         {/* Right featured */}
-        <article className="relative rounded-[28px] overflow-hidden ring-1 ring-black/5 card-clip">
-          <div className="relative h-[480px] w-full">
+        <article className="relative rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden ring-1 ring-black/5 card-clip">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[480px] w-full">
             <Image src={featured.image} alt={featured.title} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-            <h3 className="text-2xl sm:text-3xl font-bold max-w-xl font-[family-name:var(--font-space-grotesk)]">{featured.title}</h3>
-            <MetaRow date={featured.date} author={featured.author} className="mt-3 text-white/80" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 text-white">
+            <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold max-w-xl font-[family-name:var(--font-space-grotesk)]">{featured.title}</h3>
+            <MetaRow date={featured.date} author={featured.author} className="mt-2 sm:mt-3 text-white/80" />
           </div>
         </article>
       </div>

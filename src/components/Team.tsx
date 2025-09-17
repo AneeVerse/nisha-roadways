@@ -18,18 +18,18 @@ const members: TeamMember[] = [
 
 const Team: React.FC = () => {
   return (
-    <section className="relative mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-8 bg-[#f4f6ff]">
-      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="relative mx-auto max-w-[1400px] px-3 py-10 sm:px-4 sm:py-16 md:py-20 lg:px-8 bg-[#f4f6ff]">
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-4">
         {members.map((m) => (
           <article key={m.name} className="group relative transform transition-transform duration-300 hover:scale-105">
-            <div className="rounded-[28px] overflow-hidden bg-transparent card-clip shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="rounded-2xl sm:rounded-3xl lg:rounded-[28px] overflow-hidden bg-transparent card-clip shadow-lg hover:shadow-xl transition-shadow duration-300">
               {/* Image with top-right curved cut */}
-              <div className="relative w-full h-[450px] curved-notch">
+              <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] curved-notch">
                 <Image
                   src={m.image}
                   alt={m.name}
                   fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover"
                   priority={false}
                 />

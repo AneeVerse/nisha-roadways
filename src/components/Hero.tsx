@@ -42,17 +42,16 @@ const Hero = () => {
   }, [backgroundImages.length]);
 
   return (
-    <section className="relative min-h-screen bg-[#f4f6ff] p-4 md:p-6 lg:p-8">
-      <div className="relative h-[75vh] lg:h-[90vh] overflow-hidden rounded-3xl" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
+    <section className="relative min-h-screen bg-[#f4f6ff] p-2 sm:p-4 md:p-6 lg:p-8">
+      <div className="relative h-[92vh] sm:h-[75vh] lg:h-[90vh] overflow-hidden rounded-2xl sm:rounded-3xl hero-clip">
         {/* Background Images with Overlay */}
-        <div className="absolute inset-0" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}>
+        <div className="absolute inset-0 hero-clip">
           {backgroundImages.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-1000 hero-clip ${
                 index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
-              style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}
             >
               <Image
                 src={image}
@@ -65,43 +64,43 @@ const Hero = () => {
           ))}
           
           {/* Black Gradient Overlay - Dark bottom to transparent top */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" style={{clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%)'}}></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent hero-clip"></div>
         </div>
 
-        {/* Content - Fixed positioning aligned with navbar */}
-        <div className="relative z-10 w-full h-full flex items-end pb-16">
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
+        {/* Content - Responsive positioning */}
+        <div className="relative z-10 w-full h-full flex items-end pb-8 sm:pb-12 md:pb-16">
+          <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-2">
             <div className="w-full">
               {/* Top Section - Badge */}
-              <div className="mb-8">
-                <div className="inline-flex items-center bg-transparent border border-white/40 rounded-full px-4 py-2 text-sm font-medium tracking-wider uppercase text-white font-[family-name:var(--font-space-grotesk)]">
+              <div className="mb-4 sm:mb-6 md:mb-8">
+                <div className="inline-flex items-center bg-transparent border border-white/40 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium tracking-wider uppercase text-white font-[family-name:var(--font-space-grotesk)]">
                   {contentVariations[currentImageIndex].badge}
                 </div>
               </div>
 
-              {/* Main Content Grid - Fixed positioning */}
-              <div className="grid lg:grid-cols-[2fr_1fr] gap-24 items-start">
+              {/* Main Content Grid - Responsive layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 sm:gap-8 md:gap-12 lg:gap-24 items-start">
                 {/* Left Side - Main Heading */}
                 <div className="text-white max-w-4xl">
-                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight font-[family-name:var(--font-space-grotesk)]">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight font-[family-name:var(--font-space-grotesk)]">
                     {contentVariations[currentImageIndex].title}
                   </h1>
                 </div>
 
                 {/* Right Side - Description and CTA */}
-                <div className="text-white space-y-4 lg:pt-4 max-w-sm lg:ml-auto">
+                <div className="text-white space-y-3 sm:space-y-4 lg:pt-4 max-w-sm lg:ml-auto">
                   {/* Description */}
-                  <p className="text-base lg:text-lg text-white/90 leading-relaxed font-[family-name:var(--font-space-grotesk)]">
+                  <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-[family-name:var(--font-space-grotesk)]">
                     {contentVariations[currentImageIndex].description}
                   </p>
 
                   {/* CTA Button */}
                   <div>
-                    <button className="bg-blue-600 text-white hover:bg-gray-900 hover:text-white px-6 py-3 rounded-[8px] text-sm font-bold transition-colors duration-200 flex items-center shadow-lg font-[family-name:var(--font-space-grotesk)]">
+                    <button className="bg-blue-600 text-white hover:bg-gray-900 hover:text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-[8px] text-xs sm:text-sm font-bold transition-colors duration-200 flex items-center shadow-lg font-[family-name:var(--font-space-grotesk)]">
                       Get In Touch
-                      <div className="w-px h-4 bg-white/30 mx-3"></div>
+                      <div className="w-px h-3 sm:h-4 bg-white/30 mx-2 sm:mx-3"></div>
                       <svg
-                        className="h-4 w-4"
+                        className="h-3 sm:h-4 w-3 sm:w-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -122,14 +121,14 @@ const Hero = () => {
         </div>
 
         {/* Image Indicators */}
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20">
-          <div className="bg-black/20 backdrop-blur-sm rounded-full p-3">
-            <div className="flex flex-col space-y-2">
+        <div className="absolute top-1/2 right-3 sm:right-4 md:right-6 transform -translate-y-1/2 z-20">
+          <div className="bg-black/20 backdrop-blur-sm rounded-full p-2 sm:p-3">
+            <div className="flex flex-col space-y-1.5 sm:space-y-2">
               {backgroundImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors duration-200 ${
                     index === currentImageIndex
                       ? 'bg-white'
                       : 'bg-white/50 hover:bg-white/70'

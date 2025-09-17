@@ -58,9 +58,9 @@ const OurProcess: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#f4f6ff] py-20">
+    <section className="relative w-full bg-[#f4f6ff] py-10 sm:py-16 md:py-20">
       {/* Header */}
-      <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
           <Image
             src="/67761af397573ca47fb7f6cb_subtitle-icon.png"
@@ -70,7 +70,7 @@ const OurProcess: React.FC = () => {
           />
           <span>Our Process</span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-bold leading-tight text-slate-900 font-[family-name:var(--font-space-grotesk)]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-slate-900 font-[family-name:var(--font-space-grotesk)]">
           Let us take the stress
           <br />
           out of <span className="text-blue-600">your move.</span>
@@ -78,32 +78,32 @@ const OurProcess: React.FC = () => {
       </div>
 
       {/* Steps */}
-      <div className="relative mt-16" ref={containerRef}>
+      <div className="relative mt-10 sm:mt-12 md:mt-16" ref={containerRef}>
         {/* Dotted blue connector line positioned to Step level */}
         {lineTop !== null ? (
-          <div className="pointer-events-none absolute inset-x-0 hidden md:block" style={{ top: lineTop }}>
-            <div className="mx-4 sm:mx-6 lg:mx-8 border-t-2 border-blue-500 border-dotted opacity-70"></div>
+          <div className="pointer-events-none absolute inset-x-0 hidden lg:block" style={{ top: lineTop }}>
+            <div className="mx-3 sm:mx-4 md:mx-6 lg:mx-8 border-t-2 border-blue-500 border-dotted opacity-70"></div>
           </div>
         ) : null}
 
-        <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 grid grid-cols-1 gap-8 sm:gap-10 md:gap-12 sm:grid-cols-2 lg:grid-cols-4 px-3 sm:px-4 md:px-6 lg:px-8">
           {steps.map((item, idx) => (
             <div key={idx} className="relative flex flex-col items-center text-center">
               {/* Icon - no white background */}
-              <div className="mb-8">
-                <Image src={item.icon} alt={item.title} width={52} height={52} />
+              <div className="mb-6 sm:mb-8">
+                <Image src={item.icon} alt={item.title} width={52} height={52} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-[family-name:var(--font-space-grotesk)]">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 font-[family-name:var(--font-space-grotesk)]">
                 {item.title}
                 <br />
                 {item.subtitle}
               </h3>
-              <div className="mt-4" ref={idx === 0 ? stepRef : undefined}>
-                <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-semibold text-blue-600 shadow-sm ring-1 ring-black/5">
+              <div className="mt-3 sm:mt-4" ref={idx === 0 ? stepRef : undefined}>
+                <span className="inline-flex rounded-full bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold text-blue-600 shadow-sm ring-1 ring-black/5">
                   {item.step}
                 </span>
               </div>
-              <p className="mt-8 max-w-[260px] text-sm leading-6 text-slate-600">
+              <p className="mt-6 sm:mt-8 max-w-[240px] sm:max-w-[260px] text-xs sm:text-sm leading-5 sm:leading-6 text-slate-600">
                 Popularised in with release of Letraset containing passages and more recently
               </p>
             </div>
