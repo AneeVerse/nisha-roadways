@@ -92,7 +92,7 @@ const Introduction: React.FC = () => {
             <span>Introduction</span>
           </div>
           <h2 className="mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-slate-900 font-[family-name:var(--font-space-grotesk)]">
-            Exceptional Quality that <span className="text-blue-600">Can't be beaten.</span>
+            Exceptional Quality that <span className="text-blue-600">Can&apos;t be beaten.</span>
           </h2>
 
           <div className="mb-6 sm:mb-8 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-3">
