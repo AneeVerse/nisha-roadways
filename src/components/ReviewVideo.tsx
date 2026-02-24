@@ -24,7 +24,7 @@ const videos: VideoCard[] = [
     subtitle: "MANUFACTURING PARTNER",
     description: "A comprehensive look at how our strategic logistics planning transformed their distribution network, reducing turnaround times by 30% across major industrial hubs.",
     videoUrl: "/images/review-video/video/WhatsApp%20Video%202025-07-09%20at%203.57.12%20PM.mp4",
-    thumbnailUrl: "/images/review-video/thumbnail/1.png",
+    thumbnailUrl: "/images/testomonials/1046116e11d08bad323ce200edb88c0bcfa1ccb5.png",
     timestamp: "0:15",
     transcript: "Working with Nisha Roadways has been a game-changer for our national distribution. Their ability to handle complex ODC movements while maintaining strict schedules is exactly what our industry needs. The level of professionalism and real-time tracking they provide gives us complete peace of mind.",
     reviewerName: "Alex Jouit",
@@ -36,7 +36,7 @@ const videos: VideoCard[] = [
     subtitle: "IMPORT/EXPORT DIRECTOR",
     description: "Highlighting our specialized container solutions and ExIm transport expertise that cleared a massive backlog and optimized port-to-factory logistics during peak season.",
     videoUrl: "/images/review-video/video/WhatsApp%20Video%202025-07-09%20at%203.57.37%20PM.mp4",
-    thumbnailUrl: "/images/review-video/thumbnail/2.png",
+    thumbnailUrl: "/images/testomonials/5f44ea5f9ef25bb4ce6c670ef6ebdae54c9ba774.png",
     timestamp: "0:18",
     transcript: "The transition to Nisha Roadways for our cargo movements was seamless. Their team's expertise in handling delicate solar panel components and over-dimension cargo is unparalleled. We've seen a significant reduction in transit damage and a much smoother customs clearance process through their network.",
     reviewerName: "Jimmi Singh",
@@ -48,7 +48,7 @@ const videos: VideoCard[] = [
     subtitle: "OPERATIONS MANAGER",
     description: "A deep dive into how our multimodal transport strategies provided a cost-effective and reliable alternative to traditional road-only transport for long-haul shipments.",
     videoUrl: "/images/review-video/video/WhatsApp%20Video%202025-07-09%20at%203.58.00%20PM.mp4",
-    thumbnailUrl: "/images/review-video/thumbnail/3.png",
+    thumbnailUrl: "/images/testomonials/865fd375bbd7f29cea5efaa5e31fb4da9b660311.png",
     timestamp: "0:20",
     transcript: "What sets Nisha Roadways apart is their proactive approach to problem-solving. When we faced major rail disruptions, they immediately pivoted to a multimodal solution that kept our production line running. Their 24/7 support and dedication to our success make them more than just a vendor; they are a true partner.",
     reviewerName: "Rahul Bhatiya",
@@ -60,7 +60,7 @@ const videos: VideoCard[] = [
     subtitle: "LOGISTICS COORDINATOR",
     description: "Showcasing how our Empty Container Transportation (ECT) optimization helped a major exporter save significant costs on container repositioning through our intelligent network.",
     videoUrl: "/images/review-video/video/WhatsApp%20Video%202025-07-09%20at%204.02.02%20PM.mp4",
-    thumbnailUrl: "/images/review-video/thumbnail/4.png",
+    thumbnailUrl: "/images/testomonials/87487f33c11f3edb4e43d263b46a7ef859fad5aa.png",
     timestamp: "0:16",
     transcript: "The efficiency of their ECT service is remarkable. We used to struggle with container availability and high repositioning costs, but Nisha's managed network solved that for us nearly overnight. Their digital tracking system is intuitive and gives us the data we need to make informed decisions.",
     reviewerName: "Manoj Kumavat",
@@ -72,7 +72,7 @@ const videos: VideoCard[] = [
     subtitle: "SUPPLY CHAIN HEAD",
     description: "Exploring the seamless integration between our storage solutions and transportation network, creating a highly responsive and localized supply chain for their FMCG products.",
     videoUrl: "/images/review-video/video/WhatsApp%20Video%202025-07-09%20at%204.04.36%20PM.mp4",
-    thumbnailUrl: "/images/review-video/thumbnail/6.png",
+    thumbnailUrl: "/images/testomonials/e327490679c414d3809869797b63a2810170d340.png",
     timestamp: "0:30",
     transcript: "Our partnership with Nisha has allowed us to scale our operations into five new states in just under a year. Their integrated warehousing and transport solutions provided us with the local presence we needed without the heavy capital investment. Their commitment to safety and quality is visible in every aspect of their operation.",
     reviewerName: "Gaurav Singh",
@@ -428,30 +428,34 @@ const VideoCard: React.FC<{
         unoptimized
       />
 
-      {/* Modern Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      {/* Modern Overlay Gradient - Matching Figma 144px height */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[144px] bg-gradient-to-t from-[#000000] to-[#454545]/0 z-10"
+      />
 
-      {/* Card Content - Bottom Left aligned */}
-      <div className="absolute bottom-[-10px] left-0 right-0 p-4 text-white z-10">
-        <div className="flex flex-col gap-0">
-          <h4 className="font-semibold text-[15px] leading-[40px]">{video.reviewerName}</h4>
-          <p className="text-[10px] font-normal text-white leading-[40px] -mt-[25px]">{video.title}</p>
+      {/* Card Content - Bottom aligned */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 pb-6 text-white z-20 flex justify-between items-end">
+        <div className="flex flex-col gap-1">
+          <h4 className="font-semibold text-[15px] leading-tight">{video.reviewerName}</h4>
+          <p className="text-[10px] font-normal text-white/90 leading-tight">
+            {video.title}
+          </p>
 
           {/* Rating Stars */}
-          <div className="flex items-center gap-0.5 -mt-[10px] pb-4">
+          <div className="flex items-center gap-0.5 mt-1">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className={`w-3.5 h-3.5 ${i < video.rating ? 'text-yellow-400 fill-current' : 'text-gray-400/50 fill-current'}`} viewBox="0 0 20 20">
+              <svg key={i} className={`w-4 h-4 ${i < video.rating ? 'text-yellow-400 fill-current' : 'text-gray-400/50 fill-current'}`} viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Play Button - Bottom Right aligned */}
-      <div className="absolute bottom-6 right-6 z-20">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black shadow-lg transition-transform duration-300">
-          <Play className="w-5 h-5 ml-0.5 fill-current" />
+        {/* Play Button */}
+        <div className="mb-4">
+          <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center text-black shadow-lg transition-transform duration-300">
+            <Play className="w-2.5 h-2.5 ml-0.5 fill-current" />
+          </div>
         </div>
       </div>
 
