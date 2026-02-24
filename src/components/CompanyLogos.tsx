@@ -6,12 +6,12 @@ export default function CompanyLogos() {
   const logoSet = featuredPartnerLogos;
 
   return (
-    <section className="bg-[#F3FBFC] py-14 overflow-hidden">
+    <section className="bg-white py-14 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Text */}
         <div className="text-center mb-10">
-          <h2 className="text-[#3F4859] text-sm sm:text-lg font-medium tracking-tight">
-            100+ Industry Leaders Trust Nisha Roadways
+          <h2 className="text-[#3F4859] text-[18px] sm:text-[20px] font-semibold tracking-tight">
+            1000+ Brands Solved Shipping with Nisha Roadways
           </h2>
         </div>
 

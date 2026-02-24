@@ -67,24 +67,18 @@ export default function OurSolution() {
           </div>
 
           {/* Main Heading */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <h2
             className="text-[40px] font-semibold text-[#3873FF] leading-[40px] mb-[16px] max-w-[1145px]"
           >
             Integrated Intelligence. Seamless Connectivity.
-          </motion.h2>
+          </h2>
 
           {/* Subheading */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <p
             className="text-[18px] font-medium text-[#9B9B9B] leading-[27px] mb-[64px] max-w-[1062px]"
           >
             Trade flows better when every connection works intelligently. We orchestrate comprehensive supply chain solutions that anticipate challenges, optimize resources and change what&apos;s possible for businesses across India.
-          </motion.p>
+          </p>
         </div>
 
         {/* Service Cards Grid & CTA Container */}
@@ -94,16 +88,8 @@ export default function OurSolution() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px] mb-[48px] relative z-10 w-full">
             {SERVICES.map((service, index) => {
               return (
-                <motion.div
+                <div
                   key={service.key}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: [0.21, 0.45, 0.32, 0.9]
-                  }}
                   className="group relative"
                   style={{ width: '285px', height: '340px' }}
                 >
@@ -159,16 +145,13 @@ export default function OurSolution() {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )
             })}
           </div>
 
           {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div
             className="flex justify-center w-full"
           >
             <Link
@@ -176,14 +159,9 @@ export default function OurSolution() {
               className="inline-flex items-center gap-2 px-[40px] py-[16px] bg-[#124adb] hover:bg-[#1a56f0] text-white text-[14px] font-bold rounded-full transition-all duration-300 shadow-xl shadow-blue-900/30 group"
             >
               EXPLORE ALL SERVICES
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              >
-                <ArrowRight className="w-4 h-4 rotate-[-45deg]" />
-              </motion.div>
+              <ArrowRight className="w-4 h-4 rotate-[-45deg]" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

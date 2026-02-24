@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import CompanyLogos from "@/components/CompanyLogos";
-import Feature from "@/components/FeaturesSection";
+import AboutCompany from "@/components/AboutCompany";
+// import Feature from "@/components/FeaturesSection";
 import Solutions from "@/components/OurSolution";
 import Testimonials from "@/components/Testimonials";
 import ReviewVideo from "@/components/ReviewVideo";
@@ -13,7 +14,8 @@ export default function Home() {
     <main className="pt-20 ">
       <Hero />
       <CompanyLogos />
-      <Feature />
+      {/* <Feature /> */}
+      <AboutCompany />
       <Solutions />
       <ReviewVideo />
       <Testimonials hideHeader={true} singleRow={true} hideStats={true} />
