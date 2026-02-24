@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* Branding Font Family - Only Medium and Semibold */
+@font-face {
+  font-family: 'Branding';
+  src: url('/font/fonts/fonnts.com-Branding-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Branding';
+  src: url('/font/fonts/fonnts.com-Branding-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+/* Use Branding font for all text - Medium weight by default */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Branding", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Default font family for all elements */
+*,
+*::before,
+*::after {
+  font-family: "Branding", Arial, Helvetica, sans-serif;
+}
+
+/* All headings - Semibold (600) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+/* All body text and sub text - Medium (500) */
+p,
+body,
+div,
+span,
+a,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button {
+  font-weight: 500;
+}
+
+/* Ensure all interactive elements show the hand cursor */
+button,
+a,
+[role="button"],
+.cursor-pointer,
+select,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer !important;
+}
+
+/* Prevent horizontal panning/scroll bleed across the site */
+html {
+  overflow-x: clip;
+  /* stronger than hidden for layout, avoids scrollbars */
+}
+
+body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  /* disables side-swipe elasticity on mobile */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Testimonials marquee animations and masks */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-33.333%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  will-change: transform;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 60s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 60s linear infinite;
+}
+
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 30%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 30%, transparent);
+}
+
+/* Company logos continuous scroll (right -> left) */
+@keyframes logos-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scrollbar hide utility */
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
