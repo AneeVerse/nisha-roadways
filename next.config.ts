@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.worldvectorlogo.com",
+      },
+      {
+        protocol: "https",
+        hostname: "static.cdnlogo.com",
+      },
+      {
+        protocol: "https",
+        hostname: "img.logo.dev",
+      },
     ],
   },
   compiler: {
