@@ -5,6 +5,7 @@ import AboutCompany from "@/components/AboutCompany";
 import Solutions from "@/components/OurSolution";
 import Testimonials from "@/components/Testimonials";
 import ReviewVideo from "@/components/ReviewVideo";
+import ImpactStats from "@/components/ImpactStats";
 import CtaBanner from "@/components/CtaBanner";
 import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
@@ -18,8 +19,9 @@ export default function Home() {
       <AboutCompany />
       <Solutions />
       <ReviewVideo />
-      <Testimonials hideHeader={true} singleRow={true} hideStats={true} />
-      <BlogSection />
+      <ImpactStats />
+      {/* <Testimonials hideHeader={true} singleRow={true} hideStats={true} /> */}
+      {/* <BlogSection /> */}
       <CtaBanner />
       <Footer />
     </main>
