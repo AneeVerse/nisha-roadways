@@ -64,20 +64,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 }
 
-export async function generateStaticParams() {
-    try {
-        const posts = await getAllPosts() as BlogPost[];
-        if (!posts || !Array.isArray(posts)) return [];
-        return posts
-            .filter(post => post && post.slug && post.slug.current)
-            .map((post) => ({
-                slug: post.slug.current,
-            }));
-    } catch (error) {
-        console.error("Error generating static params:", error);
-        return [];
-    }
-}
 
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
     try {
