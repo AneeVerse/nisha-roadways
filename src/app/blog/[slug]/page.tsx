@@ -58,12 +58,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 authors: [post.author],
             },
         };
-    } catch (error) {
-        console.error("Error generating metadata:", error);
+    } catch {
         return { title: "Blog | Nisha Roadways" };
     }
 }
-
 
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
     try {
@@ -95,8 +93,7 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
                 <Footer />
             </main>
         );
-    } catch (error) {
-        console.error("Error in BlogDetailsPage:", error);
+    } catch {
         return (
             <main className="min-h-screen bg-white flex items-center justify-center">
                 <div className="text-center">
