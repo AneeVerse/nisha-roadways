@@ -9,6 +9,7 @@ import ImpactStats from "@/components/ImpactStats";
 import IndustryInsights from "@/components/IndustryInsights";
 import CtaBanner from "@/components/CtaBanner";
 import BlogSection from "@/components/BlogSection";
+import GlobalLocationsMap from "@/components/GlobalLocationsMap";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <IndustryInsights />
       {/* <Testimonials hideHeader={true} singleRow={true} hideStats={true} /> */}
       {/* <BlogSection /> */}
+      <GlobalLocationsMap />
       <CtaBanner />
       <Footer />
     </main>
