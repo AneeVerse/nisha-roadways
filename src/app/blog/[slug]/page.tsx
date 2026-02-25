@@ -4,6 +4,7 @@ import { getPostBySlug, getAllPosts, client } from "@/sanity/lib/client";
 import BlogContent from "@/components/blog/BlogContent";
 import Footer from "@/components/Footer";
 import CtaBanner from "@/components/CtaBanner";
+import Link from "next/link";
 
 interface BlogPost {
     _id: string;
@@ -21,57 +22,102 @@ interface BlogPost {
 }
 
 export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 // Generate Dynamic Metadata
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-    const resolvedParams = await params;
-    const slugParam = resolvedParams.slug;
+    try {
+        const resolvedParams = await params;
+        const slugParam = resolvedParams.slug;
 
-    const query = `*[_type == "post" && slug.current == $slug][0]{
-    title,
-    metaDescription,
-    "slug": slug.current,
-    "thumbnail": mainImage.asset->url,
-    excerpt,
-    "date": publishedAt,
-    "author": author->name,
-  }`;
+        const query = `*[_type == "post" && slug.current == $slug][0]{
+        title,
+        metaDescription,
+        "slug": slug.current,
+        "thumbnail": mainImage.asset->url,
+        excerpt,
+        "date": publishedAt,
+        "author": author->name,
+      }`;
 
-    const post = await client.fetch(query, { slug: slugParam });
+        const post = await client.fetch(query, { slug: slugParam });
 
-    if (!post) {
-        return { title: "Blog | Nisha Roadways", description: "This blog post does not exist." };
-    }
+        if (!post) {
+            return { title: "Blog | Nisha Roadways", description: "This blog post does not exist." };
+        }
 
-    return {
-        title: post.title,
-        description: post.metaDescription || post.excerpt || "Read this article on our blog.",
-        openGraph: {
+        return {
             title: post.title,
-            description: post.metaDescription || post.excerpt,
-            images: [post.thumbnail].filter(Boolean),
-            type: 'article',
-            publishedTime: post.date,
-            authors: [post.author],
-        },
-    };
+            description: post.metaDescription || post.excerpt || "Read this article on our blog.",
+            openGraph: {
+                title: post.title,
+                description: post.metaDescription || post.excerpt,
+                images: [post.thumbnail].filter(Boolean),
+                type: 'article',
+                publishedTime: post.date,
+                authors: [post.author],
+            },
+        };
+    } catch (error) {
+        console.error("Error generating metadata:", error);
+        return { title: "Blog | Nisha Roadways" };
+    }
+}
+
+export async function generateStaticParams() {
+    try {
+        const posts = await getAllPosts() as BlogPost[];
+        if (!posts || !Array.isArray(posts)) return [];
+        return posts
+            .filter(post => post && post.slug && post.slug.current)
+            .map((post) => ({
+                slug: post.slug.current,
+            }));
+    } catch (error) {
+        console.error("Error generating static params:", error);
+        return [];
+    }
 }
 
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
-    const resolvedParams = await params;
-    const { slug } = resolvedParams;
+    try {
+        const resolvedParams = await params;
+        const { slug } = resolvedParams;
 
-    const blog = await getPostBySlug(slug) as BlogPost;
-    const allPosts = await getAllPosts() as BlogPost[];
-    const relatedBlogs = allPosts
-        .filter((post: BlogPost) => post.slug.current !== slug)
-        .slice(0, 3);
+        const blog = await getPostBySlug(slug) as BlogPost;
 
-    return (
-        <main className="min-h-screen bg-white">
-            <BlogContent blog={blog} relatedBlogs={relatedBlogs} />
-            <CtaBanner />
-            <Footer />
-        </main>
-    );
+        if (!blog) {
+            return (
+                <main className="min-h-screen bg-white flex items-center justify-center">
+                    <div className="text-center">
+                        <h1 className="text-2xl font-bold mb-4">Blog post not found</h1>
+                        <Link href="/blog" className="text-blue-600 hover:underline">Back to blog</Link>
+                    </div>
+                </main>
+            );
+        }
+
+        const allPosts = (await getAllPosts() || []) as BlogPost[];
+        const relatedBlogs = allPosts
+            .filter((post: BlogPost) => post && post.slug && post.slug.current !== slug)
+            .slice(0, 3);
+
+        return (
+            <main className="min-h-screen bg-white">
+                <BlogContent blog={blog} relatedBlogs={relatedBlogs} />
+                <CtaBanner />
+                <Footer />
+            </main>
+        );
+    } catch (error) {
+        console.error("Error in BlogDetailsPage:", error);
+        return (
+            <main className="min-h-screen bg-white flex items-center justify-center">
+                <div className="text-center">
+                    <h1 className="text-2xl font-bold mb-4">Error loading blog post</h1>
+                    <Link href="/blog" className="text-blue-600 hover:underline">Back to blog</Link>
+                </div>
+            </main>
+        );
+    }
 }

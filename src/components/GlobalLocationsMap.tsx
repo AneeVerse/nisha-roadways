@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useMemo } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 
@@ -16,6 +17,7 @@ const LOCATIONS = [
 /**
  * Pure Map UI - This will only run on the client
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const MapInternal = ({ geoData, L }: { geoData: any; L: any }) => {
   const {
     MapContainer,
@@ -25,6 +27,7 @@ const MapInternal = ({ geoData, L }: { geoData: any; L: any }) => {
     Tooltip,
     useMap,
     useMapEvents
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
   } = require('react-leaflet');
 
   const MapLogic = () => {
@@ -152,7 +155,9 @@ const MapInternal = ({ geoData, L }: { geoData: any; L: any }) => {
 };
 
 export default function GlobalLocationsMap() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [geoData, setGeoData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [L, setL] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
 

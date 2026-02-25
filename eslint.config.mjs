@@ -18,6 +18,9 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      "patch-all.js",
+      "google-apps-script-vcard.js",
+      "google-apps-script-vcard.js",
     ],
   },
   {

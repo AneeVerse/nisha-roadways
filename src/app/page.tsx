@@ -1,14 +1,11 @@
 import Hero from "@/components/Hero";
 import CompanyLogos from "@/components/CompanyLogos";
 import AboutCompany from "@/components/AboutCompany";
-// import Feature from "@/components/FeaturesSection";
 import Solutions from "@/components/OurSolution";
-import Testimonials from "@/components/Testimonials";
 import ReviewVideo from "@/components/ReviewVideo";
 import ImpactStats from "@/components/ImpactStats";
 import IndustryInsights from "@/components/IndustryInsights";
 import CtaBanner from "@/components/CtaBanner";
-import BlogSection from "@/components/BlogSection";
 import GlobalLocationsMap from "@/components/GlobalLocationsMap";
 import Footer from "@/components/Footer";
 

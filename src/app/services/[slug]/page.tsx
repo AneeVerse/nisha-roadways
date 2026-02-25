@@ -1,4 +1,5 @@
 import { getServiceBySlug, servicesData } from "@/data/services";
+export const dynamic = 'force-dynamic';
 import { notFound } from "next/navigation";
 import ServiceTemplate from "@/components/ServiceTemplate";
 import { Metadata } from "next";
